@@ -165,7 +165,11 @@ namespace CalcLib
             string[] words = input.Split();
             char op = words[1][0];
             string response = "";
-            if(words[0].Contains('.') || words[2].Contains('.') || op == '/')
+            if(words[0] == "sqrt")
+            {
+                response = Math.Sqrt(double.Parse(words[1])).ToString() + "\r\n";
+            }
+            else if(words[0].Contains('.') || words[2].Contains('.') || op == '/')
             {
                 float result = calculate(float.Parse(words[0]), op, float.Parse(words[2]));
                 response = result.ToString() + "\r\n";
